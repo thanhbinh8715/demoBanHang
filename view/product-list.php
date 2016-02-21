@@ -1,5 +1,6 @@
 <?php
 include 'controller/product-controller.php';
+$dulieu = getAllProduct();
 ?>
 
 <table border="1">
@@ -9,6 +10,7 @@ include 'controller/product-controller.php';
         <th>Gia</th>
         <th>MoTaNgan</th>
         <th>MoTa</th>
+        <th>Chuc nang</th>
     </tr>
 
     <?php
@@ -20,6 +22,9 @@ include 'controller/product-controller.php';
                 <td><?= $dl->Price ?></td>
                 <td><?= $dl->MoTaNgan ?></td>
                 <td><?= $dl->MoTa ?></td>
+                <td>
+                    <a href="index.php?action=edit&id=<?= $dl->Id ?>">Edit</a>
+                </td>
             </tr>
             <?php
     }

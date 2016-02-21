@@ -1,14 +1,19 @@
 <?php
+
 include 'dbConnect.php';
 include 'view/header.php';
 
 
-?>
-<div id="main-content">
-    <?php
-        include 'view/left-menu.php';
 
-        
+include 'view/left-menu.php';
+
+if (isset($_GET['action'])) {
+    if ($_GET['action'] == 'edit') {
+        include 'view/product-edit.php';
+    }
+} else {
+    include 'view/product-list.php';
+}
 
 //        if (isset($_POST['addProduct'])) {
 //
@@ -25,14 +30,11 @@ include 'view/header.php';
 //        echo 'Loi them san pham : ' . mysqli_error($conn);
 //        }
 //        }
+//include 'view/product-new.php';
 
 
-        include 'view/product-new.php';
 
-        include 'view/product-list.php';
+mysqli_close($conn);
 
-        mysqli_close($conn);
-        ?>
-</div>
-<?php
+
 include 'view/footer.php';
