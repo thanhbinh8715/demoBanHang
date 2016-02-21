@@ -6,5 +6,5 @@ class Product{
     public $Image;
     public $Price;
     public $MoTaNgan;
-    public $Mota;
+    public $MoTa;
 }
