@@ -2,9 +2,18 @@
 
 include 'model/product-model.php';
 
+function deleteProductById($id){
+    global $conn;
+    $sql = 'delete from tblproduct where id=?';
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt, 'i', $id);
+    $result = mysqli_stmt_execute($stmt);
+    return $result;
+}
+
 function getProductById($id){
     global $conn;
-    $sql = 'select * from tblproduct where ?';
+    $sql = 'select * from tblproduct where id=?';
     $stmt = mysqli_prepare($conn, $sql);
     mysqli_stmt_bind_param($stmt, 'i', $id);
     mysqli_stmt_execute($stmt);

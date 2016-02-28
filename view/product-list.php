@@ -25,6 +25,9 @@ $dulieu = getAllProduct();
                 <td>
                     <a href="index.php?action=edit&id=<?= $dl->Id ?>">Edit</a>
                 </td>
+                <td>
+                    <a href="index.php?action=delete&id=<?= $dl->Id ?>">Delete</a>
+                </td>
             </tr>
             <?php
     }

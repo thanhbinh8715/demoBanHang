@@ -7,30 +7,29 @@ include 'view/header.php';
 
 include 'view/left-menu.php';
 
-if (isset($_GET['action'])) {
-    if ($_GET['action'] == 'edit') {
-        include 'view/product-edit.php';
+if (isset($_GET['thongbao'])){
+    if ($_GET['thongbao']== 'xoa_thanh_cong'){
+        echo "Ban da xoa thanh cong";
+    }else{
+        echo "Loi xoa San Pham : ";
     }
+}
+
+
+if (isset($_GET['action'])) {
+    switch ($_GET['action']){
+        case 'edit':
+            include 'view/product-edit.php';
+            break;
+        case 'delete':
+            include 'view/product-delete.php';
+            break;
+    }    
 } else {
     include 'view/product-list.php';
 }
 
-//        if (isset($_POST['addProduct'])) {
-//
-//        $Name = $_POST['Name'];
-//        $Price = $_POST['Price'];
-//        $MoTaNgan = $_POST['MoTaNgan'];
-//        $MoTa = $_POST['MoTa'];
-//
-//        $sql = "INSERT INTO `tblProduct`( `Name`, `Price`, `MoTaNgan`, `MoTa`) VALUES ('$Name','$Price','$MoTaNgan','$MoTa')";
-//        $result = mysqli_query($conn, $sql);
-//        if ($result){
-//        echo 'Them San Pham thanh cong';
-//        }else{
-//        echo 'Loi them san pham : ' . mysqli_error($conn);
-//        }
-//        }
-//include 'view/product-new.php';
+
 
 
 
