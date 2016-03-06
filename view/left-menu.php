@@ -1,6 +1,6 @@
 <div style="background: blue;">
     <ul>
-        <li>Trang chu</li>
+        <li><a href="index.php">Trang chu</a></li>
         <li>Lien he</li>
     </ul>
 </div>

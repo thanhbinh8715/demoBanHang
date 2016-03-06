@@ -3,10 +3,16 @@ include 'controller/product-controller.php';
 $dulieu = getAllProduct();
 ?>
 
+<a href="index.php?action=new" >
+    <button>Them San Pham moi</button>
+</a>
+<br />
+
 <table border="1">
     <tr>
         <th>Id</th>
         <th>Ten San Pham</th>
+        <th>Anh dai dien</th>
         <th>Gia</th>
         <th>MoTaNgan</th>
         <th>MoTa</th>
@@ -19,6 +25,7 @@ $dulieu = getAllProduct();
             <tr>
                 <td><?= $dl->Id ?></td>
                 <td><?= $dl->Name ?></td>
+                <td><img src="<?= $dl->Image ?>" title="anh dai dien" alt="image" /></td>
                 <td><?= $dl->Price ?></td>
                 <td><?= $dl->MoTaNgan ?></td>
                 <td><?= $dl->MoTa ?></td>

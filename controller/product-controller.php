@@ -34,10 +34,12 @@ function getAllProduct() {
     if ($result) {
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
+                //print_r($row);
                 $model = new Product();
                 $model->Id = $row['Id'];
                 $model->Name = $row['Name'];
                 $model->MoTa = $row['MoTa'];
+                $model->Image = $row['Image'];
                 $model->Price = $row['Price'];
                 $dulieu[] = $model;
             }
@@ -47,4 +49,18 @@ function getAllProduct() {
     }
     
     return $dulieu;
+}
+
+function productAddNew(Product $product){
+    global $conn;
+    $sql = 'insert into tblproduct(Name,Image,Price,MoTaNgan,MoTa) values(?,?,?,?,?)';
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt, 'ssiss', $product->Name,$product->Image
+            ,$product->Price,$product->MoTaNgan, $product->MoTa);
+    $result = mysqli_stmt_execute($stmt);
+    if ($result){
+        echo 'Them San Pham moi thanh cong';        
+    }  else {
+        echo 'Loi them san pham : '. mysqli_error($conn);
+    }
 }

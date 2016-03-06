@@ -25,6 +25,9 @@ if (isset($_GET['action'])) {
         case 'delete':
             include 'view/product-delete.php';
             break;
+        case 'new':
+            include 'view/product-new.php';
+            break;
         case 'upload':
             include 'view/upload.php';
             break;

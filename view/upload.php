@@ -9,6 +9,7 @@ if (isset($_POST['upload'])){
         
     }  else {
         if (move_uploaded_file($_FILES['productImage']['tmp_name'], $target_file)){
+            
             echo 'file '. $_FILES['productImage']['name'] . ' da duoc upload thanh cong.';
         }else{
             echo 'loi upload file';
