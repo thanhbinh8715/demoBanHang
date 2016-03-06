@@ -25,7 +25,10 @@ $dulieu = getAllProduct();
             <tr>
                 <td><?= $dl->Id ?></td>
                 <td><?= $dl->Name ?></td>
-                <td><img src="<?= $dl->Image ?>" title="anh dai dien" alt="image" /></td>
+                <td><img class="anhdaidien"  
+                         style="width: 200px;height: 200px" 
+                         src="<?= $dl->Image ?>" title="anh dai dien" alt="image" />
+                </td>
                 <td><?= $dl->Price ?></td>
                 <td><?= $dl->MoTaNgan ?></td>
                 <td><?= $dl->MoTa ?></td>
