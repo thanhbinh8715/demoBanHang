@@ -7,6 +7,7 @@ include 'view/header.php';
 
 include 'view/left-menu.php';
 
+
 if (isset($_GET['thongbao'])){
     if ($_GET['thongbao']== 'xoa_thanh_cong'){
         echo "Ban da xoa thanh cong";
@@ -23,6 +24,9 @@ if (isset($_GET['action'])) {
             break;
         case 'delete':
             include 'view/product-delete.php';
+            break;
+        case 'upload':
+            include 'view/upload.php';
             break;
     }    
 } else {
